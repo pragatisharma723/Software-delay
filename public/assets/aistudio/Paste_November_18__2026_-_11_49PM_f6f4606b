@@ -1,0 +1,1119 @@
+# PROJECT: ProjectPulse AI
+## AI-Powered Software Project Delay Prediction and Risk Intelligence Platform
+
+Act as a senior Machine Learning Engineer, Full-Stack Developer, Data Scientist, Software Architect and UI/UX Designer.
+
+Build a complete, functional, professional and interactive machine learning-based web application called **ProjectPulse AI – Software Project Delay Prediction and Risk Intelligence Platform**.
+
+This is an academic mini-course project that must demonstrate the practical implementation and integration of multiple machine learning algorithms along with fundamental Software Engineering concepts.
+
+The application should not look like a collection of separate ML experiments. It should function as one unified project intelligence platform where users can analyze software projects across different industries, development methodologies and project characteristics.
+
+The application must have a polished interface, a well-structured machine learning pipeline, meaningful visualizations, explainable predictions and an interactive model comparison dashboard.
+
+---
+
+# 1. PROJECT OBJECTIVE
+
+The primary objective is to analyze software development projects and predict:
+
+1. Whether a project is likely to be delayed or completed on time.
+2. The expected project completion duration.
+3. The estimated number of delay days.
+4. The probability of project delay.
+5. The major factors contributing to potential delays.
+6. The relationship between software development methodologies and project completion.
+7. The performance of different machine learning algorithms on the same prediction problem.
+8. Different project risk patterns using clustering techniques.
+
+The system should help project managers understand project risks before they become serious problems.
+
+The application must support multiple project domains instead of restricting analysis to one particular industry.
+
+---
+
+# 2. PROJECT DOMAINS
+
+Create an interactive domain selection interface as the starting point of the application.
+
+Users should be able to select the industry or sector of their software project.
+
+Include the following domains:
+
+- Healthcare and Medical Software
+- Gaming and Entertainment
+- Banking and FinTech
+- E-commerce and Retail
+- Education and E-Learning
+- Transportation and Logistics
+- Enterprise and Business Software
+- Government and Public Services
+- General Software Development
+
+Each domain should have its own visual identity, subtle thematic elements, relevant icons or illustrations and suitable project examples.
+
+For example:
+
+Healthcare:
+Hospital management systems, electronic health records, appointment applications and telemedicine platforms.
+
+Gaming:
+Multiplayer games, game engines, mobile games and online gaming platforms.
+
+Banking:
+Payment gateways, banking applications, financial management systems and transaction platforms.
+
+E-commerce:
+Shopping applications, inventory management systems, order management and recommendation engines.
+
+Education:
+Learning management systems, student portals, online examination platforms and educational applications.
+
+The selected domain should dynamically influence:
+
+- Project description and examples.
+- Relevant project features.
+- Industry-specific risk indicators.
+- Dashboard context.
+- Visual elements.
+- Analysis and recommendations.
+
+IMPORTANT: The underlying machine learning pipeline should remain consistent across domains wherever possible. Map domain-specific fields to a common feature structure instead of creating unrelated prediction systems for every domain.
+
+---
+
+# 3. SOFTWARE DEVELOPMENT METHODOLOGIES
+
+Software Engineering must be an important component of the application.
+
+Provide a separate methodology selection section.
+
+Include these five software development methodologies:
+
+### A. Waterfall Model
+Sequential development phases:
+- Requirement Analysis
+- System Design
+- Implementation
+- Testing
+- Deployment
+- Maintenance
+
+Consider requirements stability, change requests, testing schedules, dependencies and phase completion.
+
+### B. Agile Model (Scrum)
+Consider:
+- Sprint duration
+- Sprint completion percentage
+- Sprint velocity
+- Product backlog
+- Number of pending user stories
+- Sprint spillover
+- Team collaboration
+- Number of iterations
+
+### C. Spiral Model
+Consider:
+- Risk assessment cycles
+- Risk mitigation activities
+- Iteration count
+- Prototyping
+- Technical uncertainties
+- Rework and testing
+
+### D. V-Model
+Consider:
+- Verification and validation stages
+- Test case completion
+- Requirements traceability
+- Defect detection
+- Testing progress
+- Validation delays
+
+### E. Iterative and Incremental Model
+Consider:
+- Number of iterations
+- Increment completion
+- Feedback cycles
+- Rework
+- Feature delivery rate
+- Integration issues
+
+The methodology selection should dynamically display the relevant project characteristics and inputs.
+
+For example, selecting Agile should display sprint-related parameters, whereas selecting Waterfall should display phase completion and dependency-related parameters.
+
+Also provide an option to select DevOps as an optional extension, with deployment frequency, build failures, release frequency and pipeline health.
+
+Do not assume that one methodology is always better than another. Let the actual dataset and model results determine the observed patterns.
+
+Provide a methodology comparison section that analyzes project completion trends, delays, average delay days and risk levels across methodologies.
+
+---
+
+# 4. DATASET AND DATA MANAGEMENT
+
+Create a well-structured dataset for software project delay analysis.
+
+The dataset must contain project-level historical records.
+
+Use a combination of:
+
+1. A suitable publicly available dataset, if one can be identified and its fields verified.
+2. A realistic, configurable synthetic dataset to fill missing project-domain and methodology combinations.
+3. An option for users to upload their own CSV dataset.
+
+Do not falsely describe synthetic data as real-world historical data.
+
+Provide a clearly labeled sample dataset that can be downloaded.
+
+### Suggested dataset features
+
+Project identification:
+- Project_ID
+- Project_Name
+- Domain
+- Software_Development_Methodology
+- Project_Complexity
+- Project_Priority
+
+Project planning:
+- Planned_Duration_Days
+- Planned_Start_Date
+- Planned_Completion_Date
+- Team_Size
+- Budget
+- Number_of_Modules
+- Number_of_Tasks
+- Number_of_Dependencies
+
+Project progress:
+- Tasks_Completed
+- Tasks_Pending
+- Completion_Percentage
+- Actual_Progress
+- Sprint_Completion_Rate
+- Milestone_Completion_Rate
+
+Quality and technical factors:
+- Bugs_Reported
+- Critical_Bugs
+- Bugs_Resolved
+- Defect_Density
+- Code_Complexity
+- Rework_Hours
+- Testing_Completion_Percentage
+- Integration_Issues
+
+Team-related factors:
+- Developer_Experience
+- Team_Experience
+- Team_Productivity
+- Team_Turnover
+- Communication_Efficiency
+- Resource_Availability
+
+Risk factors:
+- Requirement_Changes
+- Scope_Creep
+- External_Dependencies
+- Dependency_Delay
+- Technical_Risk_Score
+- Project_Risk_Score
+
+Methodology-specific features:
+- Sprint_Velocity
+- Sprint_Spillover
+- Iteration_Count
+- Phase_Completion
+- Risk_Mitigation_Status
+- Test_Case_Completion
+- Feedback_Cycles
+
+Target variables:
+- Actual_Duration_Days
+- Delay_Days
+- Project_Status
+- Is_Delayed
+
+Define the target variables consistently:
+
+Delay_Days = Actual_Duration_Days - Planned_Duration_Days
+
+Is_Delayed = 1 when Delay_Days is greater than zero, otherwise 0.
+
+Project_Status should indicate On Time, Delayed or At Risk, with At Risk treated as a separate current operational status rather than an incorrectly defined historical target.
+
+Ensure that target columns are not accidentally used as input features during prediction.
+
+### Dataset functionality
+
+Implement:
+- CSV upload.
+- CSV download.
+- Data preview.
+- Missing-value handling.
+- Duplicate removal.
+- Outlier detection.
+- Categorical encoding.
+- Numerical feature scaling.
+- Feature selection.
+- Exploratory Data Analysis.
+
+Display the dataset size, number of features, missing values and data quality summary.
+
+---
+
+# 5. MACHINE LEARNING IMPLEMENTATION
+
+Implement every algorithm below as a genuine working machine learning model.
+
+Do not create static prediction outputs or hardcoded accuracy values.
+
+All models should be trained and evaluated using the available dataset.
+
+Use appropriate preprocessing pipelines and ensure that training and testing data are separated correctly.
+
+Use a fixed random state for reproducibility.
+
+Use stratified splitting for classification wherever appropriate.
+
+Use cross-validation where feasible.
+
+Avoid data leakage, especially when scaling, encoding, imputing missing values or selecting features.
+
+## A. Linear Regression
+
+Implement both Simple Linear Regression and Multiple Linear Regression.
+
+Objective:
+Predict the expected project completion duration.
+
+Simple Linear Regression:
+Use an individual feature such as completion percentage, team productivity or task completion rate to predict project duration.
+
+Multiple Linear Regression:
+Use multiple features such as:
+- Team Size
+- Tasks Completed
+- Tasks Pending
+- Bugs Reported
+- Dependencies
+- Project Complexity
+- Testing Completion
+- Developer Experience
+
+Display:
+- Actual versus predicted project duration.
+- Predicted completion duration in days.
+- Estimated delay days.
+- Regression equation or coefficients.
+- R² score.
+- Mean Absolute Error (MAE).
+- Mean Squared Error (MSE).
+- Root Mean Squared Error (RMSE).
+
+Provide an actual-versus-predicted scatter plot with a reference line.
+
+## B. Logistic Regression
+
+Objective:
+Predict whether a project will be delayed or completed on time.
+
+Target:
+Is_Delayed.
+
+Display:
+- Predicted class.
+- Probability of delay.
+- Probability of on-time completion.
+- Confusion matrix.
+- Accuracy.
+- Precision.
+- Recall.
+- F1-score.
+- ROC-AUC score, where applicable.
+
+Show a clear probability visualization.
+
+## C. Naive Bayes
+
+Implement Gaussian Naive Bayes for project delay classification.
+
+Use relevant numerical project characteristics after preprocessing.
+
+Display:
+- Predicted class.
+- Delay probability.
+- Confusion matrix.
+- Classification report.
+- Accuracy, Precision, Recall and F1-score.
+
+Provide a direct performance comparison with Logistic Regression.
+
+## D. Decision Tree Classification
+
+Implement a Decision Tree Classifier.
+
+Objective:
+Predict project delay and identify the factors influencing the prediction.
+
+Display:
+- Interactive or readable decision tree visualization.
+- Important features.
+- Feature importance scores.
+- Decision rules.
+- Predicted class.
+- Classification metrics.
+
+Provide human-readable explanations such as:
+
+"If dependency delay is high AND task completion is low AND critical bugs are high, the project has an increased probability of delay."
+
+The rules must be derived from the actual trained decision tree rather than manually written.
+
+## E. Support Vector Machine (SVM)
+
+Implement Support Vector Machine classification.
+
+Use appropriate feature scaling, preferably StandardScaler.
+
+Evaluate suitable kernels such as:
+- Linear
+- RBF
+
+Display:
+- Predicted project status.
+- Confusion matrix.
+- Accuracy.
+- Precision.
+- Recall.
+- F1-score.
+- Comparison of kernel performance.
+
+Ensure that preprocessing is fitted only on training data using a proper pipeline.
+
+## F. K-Means Clustering
+
+Use K-Means to identify different project risk patterns.
+
+Use suitable numerical features such as:
+- Completion Percentage
+- Bugs Reported
+- Dependencies
+- Team Productivity
+- Project Complexity
+- Testing Progress
+- Requirement Changes
+- Rework Hours
+
+Use the Elbow Method and Silhouette Score to support cluster selection.
+
+Display:
+- Number of clusters.
+- Cluster visualization.
+- Cluster sizes.
+- Cluster characteristics.
+- Cluster centroid information.
+- Silhouette score.
+
+Give meaningful, data-driven labels to clusters, for example:
+
+- Low-Risk, High-Progress Projects
+- Moderate-Risk Projects
+- High-Complexity Projects
+- Critical Delay-Prone Projects
+
+These labels must be assigned based on actual cluster characteristics and not arbitrarily.
+
+Use dimensionality reduction such as PCA to visualize high-dimensional clusters in two dimensions.
+
+## G. Hierarchical Clustering
+
+Implement Agglomerative Hierarchical Clustering.
+
+Use appropriate linkage methods such as:
+- Ward
+- Complete
+- Average
+
+Display:
+- Dendrogram.
+- Cluster visualizations.
+- Similarity patterns.
+- Cluster sizes.
+- Cluster characteristics.
+
+Explain which types of software projects tend to have similar risk and completion patterns.
+
+Use a manageable sample for dendrogram rendering when the dataset is large.
+
+## H. K-Nearest Neighbors (KNN)
+
+Implement KNN classification.
+
+Predict project delay by comparing a new project with similar historical projects.
+
+Use appropriate feature scaling.
+
+Allow selection of different K values or demonstrate a suitable K selection process.
+
+Display:
+- Predicted class.
+- Probability score.
+- Nearest similar historical project records.
+- Similarity or distance information.
+- Their actual completion status.
+- Classification metrics.
+
+Show why the selected historical projects are considered similar.
+
+## I. Ensemble Learning
+
+Implement all three ensemble approaches:
+
+1. Random Forest Classifier.
+2. Voting Classifier.
+3. Gradient Boosting Classifier.
+
+For the Voting Classifier, use compatible classification models such as Logistic Regression, Naive Bayes and Decision Tree.
+
+Display:
+- Predicted project status.
+- Probability of delay.
+- Feature importance where supported.
+- Confusion matrix.
+- Accuracy.
+- Precision.
+- Recall.
+- F1-score.
+- ROC-AUC where applicable.
+
+Compare ensemble performance with individual classification algorithms.
+
+Identify the best-performing model using actual evaluation results.
+
+Do not automatically declare an ensemble model as the winner.
+
+The best model should be selected using a clearly stated evaluation criterion, preferably F1-score and ROC-AUC, while considering precision and recall.
+
+---
+
+# 6. UNIFIED MACHINE LEARNING MODEL COMPARISON DASHBOARD
+
+Create a dedicated Model Performance Dashboard.
+
+This is one of the most important parts of the application.
+
+The user should be able to understand which algorithms are suitable for different prediction tasks.
+
+Organize the algorithms by their purpose:
+
+Regression:
+- Simple Linear Regression
+- Multiple Linear Regression
+
+Classification:
+- Logistic Regression
+- Gaussian Naive Bayes
+- Decision Tree
+- SVM
+- KNN
+- Random Forest
+- Voting Classifier
+- Gradient Boosting
+
+Clustering:
+- K-Means
+- Hierarchical Clustering
+
+Display interactive comparison charts and tables.
+
+Include:
+- Accuracy.
+- Precision.
+- Recall.
+- F1-score.
+- ROC-AUC.
+- MAE.
+- MSE.
+- RMSE.
+- R².
+- Training time.
+- Prediction time.
+
+Only display metrics relevant to each algorithm type.
+
+Do not compare regression accuracy with classification accuracy or invent values for clustering.
+
+Use a consistent test dataset for comparing classification models.
+
+Provide:
+- Model ranking.
+- Best-performing classification model.
+- Best-performing regression model.
+- Performance comparison charts.
+- Confusion matrices.
+- Metric-wise comparison.
+- Training time comparison.
+
+Include an explanation of why different algorithms may perform differently on the same dataset.
+
+Allow the user to select an algorithm and inspect its detailed results.
+
+---
+
+# 7. INTERACTIVE PROJECT PREDICTION WORKSPACE
+
+Create a central workspace called "Analyze Your Project".
+
+This should be the primary functionality of the application.
+
+### Step 1: Select Domain
+
+Choose a project domain.
+
+### Step 2: Select Software Development Methodology
+
+Choose Waterfall, Agile, Spiral, V-Model or Iterative and Incremental.
+
+### Step 3: Enter Project Details
+
+Provide an interactive form containing relevant project characteristics.
+
+Common fields:
+- Project Name.
+- Project Complexity.
+- Planned Duration.
+- Team Size.
+- Number of Tasks.
+- Tasks Completed.
+- Tasks Pending.
+- Bugs Reported.
+- Critical Bugs.
+- Number of Dependencies.
+- Requirement Changes.
+- Testing Completion.
+- Developer Experience.
+- Team Productivity.
+- Rework Hours.
+- Resource Availability.
+
+Display methodology-specific fields dynamically.
+
+For example:
+
+Agile:
+- Sprint Duration.
+- Sprint Velocity.
+- Sprint Completion Rate.
+- Sprint Spillover.
+- Pending User Stories.
+
+Waterfall:
+- Requirements Completion.
+- Design Completion.
+- Implementation Completion.
+- Testing Completion.
+- Phase Dependencies.
+
+Spiral:
+- Risk Assessment Status.
+- Number of Iterations.
+- Risk Mitigation Progress.
+- Prototyping Progress.
+
+V-Model:
+- Verification Completion.
+- Validation Completion.
+- Test Case Completion.
+- Defect Detection Rate.
+
+Iterative:
+- Iteration Count.
+- Increment Completion.
+- Feedback Cycles.
+- Rework Percentage.
+
+Validate all inputs and prevent invalid or inconsistent project values.
+
+### Step 4: Select Prediction Models
+
+Allow users to:
+- Run a single algorithm.
+- Compare multiple algorithms.
+- Run all applicable algorithms.
+
+### Step 5: Generate Prediction
+
+Show an organized project analysis report.
+
+Include:
+
+**Project Completion Prediction**
+- Estimated completion duration.
+- Planned completion duration.
+- Expected delay days.
+- Predicted project status.
+
+**Delay Risk**
+- Probability of delay.
+- Probability of on-time completion.
+- Risk category: Low, Moderate, High or Critical.
+
+**Risk Factors**
+- Main factors contributing to potential delay.
+- Feature importance or model-based explanations.
+- Areas requiring immediate attention.
+
+**Recommended Actions**
+Provide practical recommendations based on the identified risk factors.
+
+For example:
+- Reduce dependency bottlenecks.
+- Improve testing completion.
+- Allocate additional resources.
+- Prioritize critical bug resolution.
+- Reassess project scope.
+- Improve sprint planning.
+
+Recommendations must be connected to the actual input values and prediction results.
+
+Clearly distinguish model predictions from recommendations.
+
+---
+
+# 8. PROJECT RISK INTELLIGENCE
+
+Create a dedicated Risk Intelligence section.
+
+Analyze project risk through different dimensions:
+
+- Schedule Risk.
+- Technical Risk.
+- Resource Risk.
+- Dependency Risk.
+- Quality Risk.
+- Requirement Change Risk.
+
+Use suitable features from the dataset to calculate or predict risk indicators.
+
+Display:
+- Overall risk level.
+- Risk distribution.
+- Top contributing factors.
+- Risk heatmap.
+- Risk factor ranking.
+- Project risk trends.
+
+Where possible, use interpretable model outputs such as Decision Tree rules and Random Forest feature importance.
+
+Do not present arbitrary risk scores as scientifically validated probabilities.
+
+Clearly explain how any composite risk score is calculated.
+
+---
+
+# 9. MAIN DASHBOARD AND NAVIGATION
+
+Create a professional dashboard with the following navigation:
+
+1. Overview
+2. Domain Explorer
+3. Methodology Analysis
+4. Dataset Explorer
+5. Project Prediction
+6. ML Model Laboratory
+7. Model Comparison
+8. Clustering & Project Patterns
+9. Risk Intelligence
+10. Reports & Insights
+
+### Overview Dashboard
+
+Display:
+- Total historical projects.
+- On-time projects.
+- Delayed projects.
+- Average project completion duration.
+- Average delay days.
+- Overall delay percentage.
+- Most common methodology.
+- Highest-risk domain.
+- Best-performing classification model.
+
+Include visualizations:
+- Delayed versus on-time projects.
+- Domain-wise project distribution.
+- Methodology-wise delay comparison.
+- Average delay by domain.
+- Project completion trends.
+- Risk distribution.
+- Algorithm performance overview.
+
+All dashboard components should respond to the selected dataset and filters.
+
+Provide filters for:
+- Domain.
+- Methodology.
+- Project complexity.
+- Risk level.
+- Project status.
+
+---
+
+# 10. DATA VISUALIZATION AND INTERACTIVITY
+
+Use modern, interactive visualizations.
+
+Recommended chart types:
+- Bar Charts.
+- Line Charts.
+- Scatter Plots.
+- Pie or Donut Charts.
+- Heatmaps.
+- Radar Charts.
+- Confusion Matrices.
+- Actual versus Predicted Plots.
+- Feature Importance Charts.
+- Elbow Curves.
+- Silhouette Analysis.
+- PCA Cluster Plots.
+- Hierarchical Dendrograms.
+
+Use Plotly for interactive visualizations wherever possible.
+
+Every chart must have:
+- Proper titles.
+- Axis labels.
+- Legends where required.
+- Tooltips.
+- Clear data interpretation.
+
+Avoid unnecessary charts that do not provide useful information.
+
+---
+
+# 11. REPORT GENERATION
+
+Create a downloadable project analysis report.
+
+The report should include:
+
+- Project information.
+- Selected domain.
+- Selected software development methodology.
+- Project input parameters.
+- Predicted completion duration.
+- Expected delay days.
+- Delay probability.
+- Predicted project status.
+- Important risk factors.
+- Selected machine learning algorithms.
+- Model performance comparison.
+- Recommendations.
+
+Support PDF and CSV export wherever appropriate.
+
+Also provide an option to download the prediction results and model evaluation metrics.
+
+---
+
+# 12. UI/UX DESIGN REQUIREMENTS
+
+The design must look like a professionally developed SaaS analytics platform, not a generic AI-generated dashboard or a basic college project.
+
+Use a modern, premium and minimal visual language.
+
+### Design direction
+
+Use a sophisticated light-themed interface.
+
+Suggested color palette:
+
+- Primary Navy: #14243A
+- Deep Blue: #243B63
+- Soft Blue: #6F91C8
+- Teal Accent: #36A6A0
+- Background: #F5F7FA
+- Card Background: #FFFFFF
+- Primary Text: #202C3C
+- Secondary Text: #718096
+- Soft Orange: #E9A45B
+- Risk Red: #D96C6C
+
+Use color consistently:
+- Green for on-time or low-risk status.
+- Amber for moderate risk.
+- Orange for high risk.
+- Red for critical risk.
+
+Avoid excessive gradients, glowing elements, neon colors and excessive shadows.
+
+### 3D Visual Elements
+
+Incorporate subtle, high-quality 3D elements where they enhance the experience.
+
+The visual theme should be related to software engineering and project intelligence.
+
+Examples:
+- A sophisticated 3D project workflow illustration on the landing page.
+- Floating interconnected software modules.
+- Subtle 3D data nodes representing project dependencies.
+- A project lifecycle visualization.
+- A layered dashboard illustration.
+- Domain-specific visual accents in the domain selection screen.
+
+Use Three.js or React Three Fiber only where appropriate.
+
+3D elements should be lightweight, subtle and optimized.
+
+Do not overload the application with unnecessary animations.
+
+### Domain-Specific Visual Identity
+
+When the user changes domains, adjust selected illustrations and accent elements.
+
+Examples:
+- Healthcare: subtle medical software and digital health illustrations.
+- Gaming: game development modules and digital environment elements.
+- Banking: financial transaction networks and secure digital systems.
+- E-commerce: shopping workflows and inventory modules.
+- Education: digital learning systems and interconnected knowledge nodes.
+
+Keep the core application branding consistent.
+
+### Interface Guidelines
+
+- Use clean typography.
+- Maintain consistent spacing.
+- Use rounded cards with restrained shadows.
+- Provide clear visual hierarchy.
+- Use responsive layouts.
+- Include useful empty states.
+- Add loading indicators during model training and prediction.
+- Provide clear error and success messages.
+- Include tooltips for unfamiliar ML terms.
+- Add a sidebar with clean navigation.
+- Use smooth but subtle transitions.
+
+The landing page should look particularly impressive and immediately communicate the purpose of the platform.
+
+---
+
+# 13. TECHNICAL ARCHITECTURE
+
+Use a reliable full-stack architecture.
+
+Recommended technology stack:
+
+Frontend:
+- React.js.
+- TypeScript.
+- Vite.
+- Tailwind CSS or a consistent custom CSS design system.
+- Recharts or Plotly.
+- Lucide React icons.
+- Three.js or React Three Fiber for selected 3D elements.
+
+Backend:
+- Python.
+- FastAPI.
+- REST APIs.
+
+Machine Learning:
+- NumPy.
+- Pandas.
+- Scikit-learn.
+- Matplotlib.
+- Seaborn.
+- Plotly.
+
+Data Storage:
+- SQLite for the initial version or a suitable relational database.
+- Store uploaded dataset metadata, prediction history, project records and model evaluation results.
+
+Recommended backend organization:
+
+backend/
+    main.py
+    requirements.txt
+    data/
+        sample_projects.csv
+    models/
+        regression.py
+        logistic_regression.py
+        naive_bayes.py
+        decision_tree.py
+        svm.py
+        kmeans.py
+        hierarchical.py
+        knn.py
+        ensemble.py
+    preprocessing/
+        data_cleaning.py
+        feature_engineering.py
+        pipelines.py
+    evaluation/
+        metrics.py
+        comparison.py
+    services/
+        prediction_service.py
+        risk_analysis.py
+        report_service.py
+    database/
+        models.py
+        database.py
+
+frontend/
+    src/
+        components/
+        pages/
+        layouts/
+        charts/
+        services/
+        hooks/
+        assets/
+        styles/
+
+Keep the code modular and maintainable.
+
+Create separate API endpoints for:
+- Dataset upload.
+- Dataset preview.
+- Data preprocessing.
+- Model training.
+- Model evaluation.
+- Project prediction.
+- Model comparison.
+- Clustering.
+- Risk analysis.
+- Report generation.
+
+Use proper request validation and meaningful API responses.
+
+---
+
+# 14. IMPORTANT MACHINE LEARNING REQUIREMENTS
+
+These requirements are mandatory:
+
+1. Every specified ML algorithm must be implemented, not merely displayed as a name in the interface.
+2. Models must use actual training and testing data.
+3. Use consistent feature engineering and appropriate preprocessing.
+4. Avoid data leakage.
+5. Do not hardcode accuracy, precision, recall, F1-score or other evaluation metrics.
+6. Regression and classification must be treated as different prediction tasks.
+7. Clustering must be evaluated using suitable clustering metrics.
+8. All classification models must be evaluated on a comparable test dataset.
+9. Use actual model outputs for prediction visualizations.
+10. Save trained models where appropriate.
+11. Support retraining when a new dataset is uploaded.
+12. Display warnings when insufficient data is available.
+13. Clearly distinguish synthetic sample data from real-world data.
+14. Handle class imbalance where necessary.
+15. Provide meaningful explanations for predictions.
+
+For classification, use suitable metrics including Accuracy, Precision, Recall, F1-score, ROC-AUC and Confusion Matrix.
+
+For regression, use MAE, MSE, RMSE and R².
+
+For clustering, use Silhouette Score and appropriate cluster visualizations.
+
+Do not force every algorithm into every task. Use each algorithm for the problem it is designed to solve.
+
+---
+
+# 15. APPLICATION FLOW
+
+The intended user journey should be:
+
+Landing Page
+    ↓
+Select Project Domain
+    ↓
+Select Software Development Methodology
+    ↓
+Explore Relevant Project Characteristics
+    ↓
+Enter Project Details
+    ↓
+Validate and Preprocess Inputs
+    ↓
+Select Machine Learning Algorithms
+    ↓
+Run Predictions
+    ↓
+Display Completion Duration and Delay Probability
+    ↓
+Identify Risk Factors
+    ↓
+Compare ML Models
+    ↓
+Analyze Similar Projects and Clusters
+    ↓
+View Recommendations
+    ↓
+Download Project Analysis Report
+
+Make the experience intuitive and easy to navigate.
+
+---
+
+# 16. FINAL DELIVERABLES
+
+Build a complete working application, not just a UI prototype.
+
+The final output must include:
+
+1. A polished landing page.
+2. Domain selection functionality.
+3. Five software development methodology options.
+4. Dynamic project input forms.
+5. Dataset upload and sample dataset functionality.
+6. Data preprocessing and EDA.
+7. All specified regression algorithms.
+8. All specified classification algorithms.
+9. Both clustering algorithms.
+10. KNN nearest historical project identification.
+11. Ensemble learning implementation.
+12. Interactive prediction dashboard.
+13. Model comparison dashboard.
+14. Risk intelligence dashboard.
+15. Domain and methodology analysis.
+16. Interactive charts.
+17. Report generation and export.
+18. Proper backend APIs.
+19. Database integration.
+20. Setup and execution instructions.
+
+Also provide a README explaining:
+- Project overview.
+- Objectives.
+- Technology stack.
+- Dataset description.
+- Feature descriptions.
+- ML algorithms and their applications.
+- Software development methodologies.
+- Model evaluation techniques.
+- System architecture.
+- Installation instructions.
+- How to run the frontend and backend.
+
+### DEVELOPMENT INSTRUCTIONS
+
+Before implementation, organize the project architecture and data schema.
+
+Then implement the application module by module while maintaining integration between the frontend, backend and ML models.
+
+Prioritize a functional end-to-end application over decorative elements.
+
+Do not leave non-functional buttons, placeholder predictions, hardcoded charts or dummy model metrics.
+
+If a particular feature cannot be implemented, explicitly identify the limitation rather than pretending it works.
+
+Make sure the project can actually be executed locally.
+
+The final application should demonstrate a strong understanding of both Software Engineering and Machine Learning, with particular emphasis on practical model implementation, comparative evaluation, explainability and professional dashboard design.
+
+**The ultimate goal is to create a complete, academically presentable and technically sound machine learning platform that predicts software project delays, identifies their underlying causes, compares software development methodologies and evaluates different machine learning approaches using actual experimental results.**

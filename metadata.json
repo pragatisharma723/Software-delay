@@ -1,0 +1,6 @@
+{
+  "name": "ProjectPulse AI",
+  "description": "AI-powered software project delay prediction, risk intelligence, and comparative machine learning analytics platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
