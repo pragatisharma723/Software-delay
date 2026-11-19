@@ -1,6 +1,7 @@
 import { Download, RefreshCw, Search, Upload } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 import { PlotlyChart } from '../components/PlotlyChart.tsx';
+import { exportDatasetCsv } from '../services/reportExport.ts';
 import type { DatasetMeta, ModelLabSnapshot, ProjectRecord } from '../types/project.ts';
 
 interface DatasetExplorerPageProps {
@@ -151,13 +152,14 @@ export function DatasetExplorerPage({
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <a
-            href="/api/dataset/download"
-            className="px-3.5 py-2 text-xs font-medium text-[#082441] bg-white border border-[#C2D2E3] hover:border-[#082441] rounded-lg inline-flex items-center gap-2 whitespace-nowrap"
+          <button
+            type="button"
+            onClick={() => exportDatasetCsv(records, snapshot.datasetName)}
+            className="px-3.5 py-2 text-xs font-medium text-[#082441] bg-white border border-[#C2D2E3] hover:border-[#082441] rounded-lg inline-flex items-center gap-2 whitespace-nowrap cursor-pointer"
           >
             <Download className="w-3.5 h-3.5" />
             Download Sample CSV
-          </a>
+          </button>
 
           <input
             ref={fileInputRef}

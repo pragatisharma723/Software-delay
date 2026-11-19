@@ -1,5 +1,6 @@
 import { jsPDF } from 'jspdf';
-import type { ModelLabSnapshot, PredictionReport } from '../types/project.ts';
+import { recordsToCsv } from '../../server/data/datasetGenerator.ts';
+import type { ModelLabSnapshot, PredictionReport, ProjectRecord } from '../types/project.ts';
 
 function triggerDownload(filename: string, content: string, mimeType: string) {
   const blob = new Blob([content], { type: mimeType });
@@ -11,6 +12,12 @@ function triggerDownload(filename: string, content: string, mimeType: string) {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+}
+
+export function exportDatasetCsv(records: ProjectRecord[], datasetName: string) {
+  const csv = recordsToCsv(records);
+  const safeName = datasetName.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+  triggerDownload(`${safeName || 'projectpulse_dataset'}.csv`, csv, 'text/csv;charset=utf-8;');
 }
 
 export function exportModelMetricsCsv(snapshot: ModelLabSnapshot) {

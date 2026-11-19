@@ -25,7 +25,7 @@ import {
   type ActiveMLWorkspace,
 } from './server/ml/engine.ts';
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 let workspace: ActiveMLWorkspace;
 
